@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <h1>Student Management System</h1>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+    <div class="title-row">
+
+        <h2>Student List</h2>
+
+        <button class="add-btn"
+                onclick="openAddModal()">
+            + Add Student
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH AREA -->
+
+    <div class="search-box">
+
+        <input
+                type="number"
+                id="rollSearch"
+                placeholder="Enter Roll Number">
+
+        <button onclick="searchStudent()">
+            Search
+        </button>
+
+
+        <input
+                type="text"
+                id="technologySearch"
+                placeholder="Enter Technology">
+
+        <button onclick="filterTechnology()">
+            Filter
+        </button>
+
+
+        <button class="show-btn"
+                onclick="loadStudents()">
+            Show All
+        </button>
+
+    </div>
+
+
+    <!-- STUDENT TABLE -->
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>Roll Number</th>
+
+            <th>Gender</th>
+
+            <th>Name</th>
+
+            <th>Technology</th>
+
+            <th>Actions</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="studentTable">
+
+        </tbody>
+
+    </table>
+
+
+    <!-- DELETE ALL -->
+
+    <button class="delete-all"
+            onclick="deleteAllStudents()">
+
+        Delete All Students
+
+    </button>
+
+</main>
+
+
+<!-- ADD / EDIT MODAL -->
+
+<div id="studentModal"
+     class="modal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeModal()">
+            &times;
+        </span>
+
+        <h2 id="modalTitle">
+            Add Student
+        </h2>
+
+
+        <input
+                type="number"
+                id="rno"
+                placeholder="Roll Number">
+
+
+        <input
+                type="text"
+                id="name"
+                placeholder="Student Name">
+
+
+        <select id="gender">
+
+            <option value="">
+                Select Gender
+            </option>
+
+            <option value="Male">
+                Male
+            </option>
+
+            <option value="Female">
+                Female
+            </option>
+
+        </select>
+
+
+        <input
+                type="text"
+                id="technology"
+                placeholder="Technology">
+
+
+        <button class="save-btn"
+                onclick="saveStudent()">
+
+            Save Student
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="/script.js"></script>
+
+</body>
+
+</html>
